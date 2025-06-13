@@ -120,7 +120,7 @@ opacity: 0.8;
 		}
     
 		// let's add the Denver Obseity data -- ##4 here
-		$.getJSON('./1980.geojson', function(data) {
+		$.getJSON('./2002.geojson', function(data) {
 			// covert the file into a layer
 			snowwaterequivalencylayer = L.geoJSON(data, 
 						       {style:style1, 
@@ -132,7 +132,7 @@ opacity: 0.8;
 			map.panTo(snowwaterequivalencylayer.getBounds().getCenter());
 
 			// add the layer to the layercontrol
-			layerControl.addOverlay(snowwaterequivalencylayer, "Snow Water Equivalency 1980-2002");
+			layerControl.addOverlay(snowwaterequivalencylayer, "Snow Water Equivalency 2002-2024");
 		});
 
 		// let's try to add some remote DRCOG data
@@ -167,7 +167,7 @@ opacity: 0.8;
     <h1><a href="https://www.nrcs.usda.gov/" style="color: rgb(47, 79, 79);">Natural Resources Conservation Service U.S. Department of Agriculture</a></h1>
 </div>
 <p id="header" style="color: rgb(47, 79, 79); width: 550px;">
-    Data from: <a href="https://wcc.sc.egov.usda.gov/reportGenerator/" style="color: rgb(47, 79, 79); width: 550px;">USDA Snow Pack Data 1980-2001</a>
+    Data from: <a href="https://wcc.sc.egov.usda.gov/reportGenerator/" style="color: rgb(47, 79, 79); width: 550px;">USDA Snow Pack Data 2002-2024</a>
 </p>
 
 	<br>
