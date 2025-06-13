@@ -96,16 +96,11 @@ opacity: 0.8;
 		// function to style my choropleth map
 		function style1 (feature) {
 			d = feature.properties.Snow_Water_Equivalent__in__Mean_of_Monthly_Values;
-			answer = d > 10 ? ' rgb(8, 41, 17)' :
-            					 d > 9 ? 'rgb(0,68,27)' :
-            					 d > 8 ? 'rgb(0,109,44)' :
-            					 d > 7 ? 'rgb(35,139,69)' :
-                                 d > 6 ? 'rgb(65,174,118)' :
-                                 d > 5 ? 'rgb(102,194,164)' :
-                                 d > 4 ? 'rgb(153,216,201)' :
-                                 d > 3  ? 'rgb(204,236,230)' :
-                                 d > 2  ? 'rgb(229,245,249)' :
-                                 d > 1  ? 'rgb(237,248,177)' :
+			answer = d > 21.1 ? ' rgb(8, 41, 17)' :
+            			 d > 10.09 ? 'rgb(0,109,44)' :
+                                 d > 7.05? 'rgb(102,194,164)' :
+                                 d > 4.6 ? 'rgb(204,236,230)' :
+                                 d > 2.2  ? 'rgb(237,248,177)' :
                                           'rgb(255,255,217)';
 
 			styleReturn = {
@@ -140,10 +135,9 @@ opacity: 0.8;
             var legend = L.control({position: 'bottomright'}); 
 	    legend.onAdd = function(map) {
 		    var div = L.DomUtil.create('div', 'info legend');
-		    colors = ['rgb(255,255,217)', 'rgb(237,248,177)', 'rgb(229,245,249)', 'rgb(204,236,230)', 'rgb(153,216,201)', 'rgb(102,194,164)', 'rgb(65,174,118)', 'rgb(35,139,69)', 'rgb(0,109,44)',
-			      'rgb(0,68,27)', 'rgb(8, 41, 17)' ];
-		    labels = ['1', '2', '3', '4', '5',
-			     '6', '7', '8', '9', '10', '10<'];
+		    colors = ['rgb(255,255,217)', 'rgb(237,248,177)', 'rgb(204,236,230)', 'rgb(102,194,164)', 'rgb(0,109,44)',
+			       'rgb(8, 41, 17)' ];
+		    labels = ['0-2.2', '2.3-4.6', '4.7-7.05', '7.06-10.09', '10.10-21.1', '21.1<'];
 		    
 		    div.innerHTML = '<h3>SWE Values (in.)';
 		    for (var i = 0; i <colors.length; i++) {
